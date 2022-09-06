@@ -22,10 +22,12 @@ run label_images.py
 save 80% of images and annotations in ~\Tensorflow\workspace\images\train
 save 20% of images and annotations in ~\Tensorflow\workspace\images\test
 
+run paths.py
+change the name of CUSTOM_MODEL_NAME to something that is not in ~\Tensorflow\workspace\models
+
 (OPTIONAL - ENABLE CUDA AND CNN DRIVERS)
 run training.py
 Ensure that labels in image annotations match what the LABEL_MAP has.
-
 Check what is the highest checkpoint value in ~\Tensorflow\workspace\models\{name of model}
 change the 'ckpt-#' to whatever the highest checkpoint is in the folder above
 run video_processing.py
