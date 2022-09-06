@@ -4,8 +4,8 @@ import os
 import time
 
 # DEFINE IMAGE CATEGORIES TO COLLECT INTO #
-labels = ['thumbsup', 'thumbsdown', 'thankyou', 'livelong']
-number_imgs = 2
+labels = ['thumbsup', 'thumbsdown', 'livelong']
+number_imgs = 3
 
 # SETUP FOLDERS ON OS #
 IMAGES_PATH = os.path.join('Tensorflow', 'workspace', 'images', 'collectedimages')
