@@ -1,8 +1,3 @@
-# DEPENDENCIES #
-# python -m pip install --upgrade pip
-# pip install ipykernel
-# python -m ipykernel install --user --name={name of venv}
-# pip install opencv-python
 import cv2
 import uuid
 import os

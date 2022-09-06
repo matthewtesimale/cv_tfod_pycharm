@@ -1,9 +1,5 @@
-# DEPENDENCIES #
-# pip install --upgrade pyqt5 lxml
-# python -m pip install gitpython
 import os
 import git
-
 
 # Create directory that contains the image labelling python script
 LABELIMG_PATH = os.path.join('Tensorflow', 'labelimg')
