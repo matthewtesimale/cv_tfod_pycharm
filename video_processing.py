@@ -27,7 +27,8 @@ def detect_fn(image):
 
 category_index = label_map_util.create_category_index_from_labelmap(files['LABELMAP'])
 
-cap = cv2.VideoCapture(0)
+# admin:Camera01
+cap = cv2.VideoCapture('rtsp://192.168.1.206:554/1')
 width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
