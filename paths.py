@@ -3,16 +3,18 @@ import git
 
 # ------------------------------- SETUP PATHS -------------------------------
 # Name of model - Should change if wanting to version a model
-CUSTOM_MODEL_NAME = 'my_ssd_mobnet_tuned'
+CUSTOM_MODEL_NAME = 'my_ssd_mobnet_guns'
 PRETRAINED_MODEL_NAME = 'ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8'
 PRETRAINED_MODEL_URL = 'http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_mobilenet_v2_fpnlite_320x320_coco17_tpu-8.tar.gz'
 TF_RECORD_SCRIPT_NAME = 'generate_tfrecord.py'
+JSON_TO_XML_NAME = 'labelme2voc.py'
 LABEL_MAP_NAME = 'label_map.pbtxt'
 
 paths = {
     'WORKSPACE_PATH': os.path.join('Tensorflow', 'workspace'),
     'SCRIPTS_PATH': os.path.join('Tensorflow', 'scripts'),
     'APIMODEL_PATH': os.path.join('Tensorflow', 'models'),
+    'JSON_TO_XML_PATH': os.path.join('Tensorflow', 'json_xml', 'examples', 'bbox_detection'),
     'ANNOTATION_PATH': os.path.join('Tensorflow', 'workspace', 'annotations'),
     'IMAGE_PATH': os.path.join('Tensorflow', 'workspace', 'images'),
     'MODEL_PATH': os.path.join('Tensorflow', 'workspace', 'models'),
@@ -27,7 +29,8 @@ paths = {
 files = {
     'PIPELINE_CONFIG': os.path.join('Tensorflow', 'workspace', 'models', CUSTOM_MODEL_NAME, 'pipeline.config'),
     'TF_RECORD_SCRIPT': os.path.join(paths['SCRIPTS_PATH'], TF_RECORD_SCRIPT_NAME),
-    'LABELMAP': os.path.join(paths['ANNOTATION_PATH'], LABEL_MAP_NAME)
+    'LABELMAP': os.path.join(paths['ANNOTATION_PATH'], LABEL_MAP_NAME),
+    'JSON_TO_XML_SCRIPT': os.path.join(paths['JSON_TO_XML_PATH'], JSON_TO_XML_NAME)
 }
 
 for path in paths.values():
@@ -44,6 +47,9 @@ if os.name=='nt':
 
 if not os.path.exists(os.path.join(paths['APIMODEL_PATH'], 'research', 'object_detection')):
     git.Repo.clone_from('https://github.com/tensorflow/models', paths['APIMODEL_PATH'])
+
+if not os.path.exists(files['JSON_TO_XML_SCRIPT']):
+    git.Repo.clone_from('https://github.com/wkentaro/labelme.git', paths['JSON_TO_XML_PATH'])
 
 # Install Tensorflow Object Detection
 if os.name == 'posix':

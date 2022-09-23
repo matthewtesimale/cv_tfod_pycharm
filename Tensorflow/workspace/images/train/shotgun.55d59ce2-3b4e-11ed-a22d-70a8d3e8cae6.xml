@@ -1,0 +1,25 @@
+<annotation>
+  <folder/>
+  <filename>shotgun.55d59ce2-3b4e-11ed-a22d-70a8d3e8cae6.jpg</filename>
+  <database/>
+  <annotation/>
+  <image/>
+  <size>
+    <height>480</height>
+    <width>640</width>
+    <depth>3</depth>
+  </size>
+  <segmented/>
+  <object>
+    <name>shotgun</name>
+    <pose/>
+    <truncated/>
+    <difficult/>
+    <bndbox>
+      <xmin>140.0</xmin>
+      <ymin>197.0</ymin>
+      <xmax>550.5</xmax>
+      <ymax>246.5</ymax>
+    </bndbox>
+  </object>
+</annotation>

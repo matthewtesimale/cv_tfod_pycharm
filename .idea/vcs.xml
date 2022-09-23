@@ -2,6 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Tensorflow/cocoapi" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Tensorflow/json_xml" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Tensorflow/labelimg" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Tensorflow/models" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Tensorflow/scripts" vcs="Git" />

@@ -8,7 +8,7 @@ LABELIMG_PATH = os.path.join('Tensorflow', 'labelimg')
 # ****** RUN ONCE *******
 if not os.path.exists(LABELIMG_PATH):
     os.makedirs(LABELIMG_PATH)
-    git.Repo.clone_from('https://github.com/tzutalin/labelImg', LABELIMG_PATH)
+    git.Repo.clone_from('https://github.com/heartexlabs/labelImg.git', LABELIMG_PATH)
 
 # Check if Mac or Windows, then install labelimg program
 # ****** RUN ONCE *******

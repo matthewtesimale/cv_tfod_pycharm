@@ -7,10 +7,8 @@ from object_detection.utils import config_util
 from paths import paths, files, PRETRAINED_MODEL_NAME
 
 # ------------------------------- CREATE LABEL MAP -------------------------------
-labels = [{'name':'ThumbsUp', 'id':1}
-    , {'name':'ThumbsDown', 'id':2}
-    , {'name':'ThankYou', 'id':3}
-    , {'name':'LiveLong', 'id':4}]
+labels = [{'name':'handgun', 'id':1}
+    , {'name':'shotgun', 'id':2}]
 
 with open(files['LABELMAP'], 'w') as f:
     for label in labels:
@@ -25,6 +23,7 @@ if not os.path.exists(files['TF_RECORD_SCRIPT']):
 
 os.system(f"python {files['TF_RECORD_SCRIPT']} -x {os.path.join(paths['IMAGE_PATH'], 'train')} -l {files['LABELMAP']} -o {os.path.join(paths['ANNOTATION_PATH'], 'train.record')}")
 os.system(f"python {files['TF_RECORD_SCRIPT']} -x {os.path.join(paths['IMAGE_PATH'], 'test')} -l {files['LABELMAP']} -o {os.path.join(paths['ANNOTATION_PATH'], 'test.record')}")
+
 # ------------------------------- COPY MODEL CONFIG TO TRAINING FOLDER -------------------------------
 if os.name =='posix':
     # !cp {os.path.join(paths['PRETRAINED_MODEL_PATH'], PRETRAINED_MODEL_NAME, 'pipeline.config')} {os.path.join(paths['CHECKPOINT_PATH'])}
@@ -53,5 +52,5 @@ with tf.io.gfile.GFile(files['PIPELINE_CONFIG'], "wb") as f:
     f.write(config_text)
 # ------------------------------- TRAIN THE MODEL -------------------------------
 TRAINING_SCRIPT = os.path.join(paths['APIMODEL_PATH'], 'research', 'object_detection', 'model_main_tf2.py')
-command = "python {} --model_dir={} --pipeline_config_path={} --num_train_steps=1000".format(TRAINING_SCRIPT, paths['CHECKPOINT_PATH'],files['PIPELINE_CONFIG'])
+command = "python {} --model_dir={} --pipeline_config_path={} --num_train_steps=600".format(TRAINING_SCRIPT, paths['CHECKPOINT_PATH'],files['PIPELINE_CONFIG'])
 os.system(command)

@@ -4,8 +4,8 @@ import os
 import time
 
 # DEFINE IMAGE CATEGORIES TO COLLECT INTO #
-labels = ['thumbsup', 'thumbsdown', 'livelong']
-number_imgs = 3
+labels = ['handgun', 'shotgun']
+number_imgs = 10
 
 # SETUP FOLDERS ON OS #
 IMAGES_PATH = os.path.join('Tensorflow', 'workspace', 'images', 'collectedimages')
@@ -43,7 +43,7 @@ for label in labels:
         cv2.imwrite(imgname, frame)
         # Show the image that was taken
         cv2.imshow('frame', frame)
-        time.sleep(2)
+        time.sleep(3)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break

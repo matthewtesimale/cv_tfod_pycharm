@@ -1,0 +1,25 @@
+<annotation>
+  <folder/>
+  <filename>handgun.37918edd-3b4e-11ed-baa1-70a8d3e8cae6.jpg</filename>
+  <database/>
+  <annotation/>
+  <image/>
+  <size>
+    <height>480</height>
+    <width>640</width>
+    <depth>3</depth>
+  </size>
+  <segmented/>
+  <object>
+    <name>handgun</name>
+    <pose/>
+    <truncated/>
+    <difficult/>
+    <bndbox>
+      <xmin>339.5</xmin>
+      <ymin>272.5</ymin>
+      <xmax>406.5</xmax>
+      <ymax>324.5</ymax>
+    </bndbox>
+  </object>
+</annotation>
