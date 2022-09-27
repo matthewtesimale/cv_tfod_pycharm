@@ -16,7 +16,7 @@ detection_model = model_builder.build(model_config=configs['model'], is_training
 # Restore checkpoint
 # Be sure to check what is the highest checkpoint value in ~\Tensorflow\workspace\models\my_ssd_mobnet_tuned
 ckpt = tf.compat.v2.train.Checkpoint(model=detection_model)
-ckpt.restore(os.path.join(paths['CHECKPOINT_PATH'], 'ckpt-1')).expect_partial()
+ckpt.restore(os.path.join(paths['CHECKPOINT_PATH'], 'ckpt-4')).expect_partial()
 
 @tf.function
 def detect_fn(image):
